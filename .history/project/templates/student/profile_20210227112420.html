@@ -1,0 +1,60 @@
+{% extends "layouts.html" %} {% block title %} Exam and Profile{% endblock %} {% block content %} {% load static %}
+<div class="tm-blog-img-container">
+</div>
+<!-- ======= Blog ======= -->
+<section class="tm-section">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <div class="tm-blog-post text-center">
+                    <h3 class="tm-green-text">পরীক্ষাসমূহ</h3>
+                    <p>বিভিন্ন বিষয়াবলীর উপর পরীক্ষাসমূহ</p>
+                </div>
+            </div>
+            <aside class="col-md-6 col-sm-4 tm-aside-r">
+                <div class="tm-aside-container text-center">
+                    <h3 class="tm-green-text text-center tm-title">
+                        প্রফাইল
+                    </h3>
+                    <div class="row justify-content-center" data-aos="fade-up">
+                        <div class="col-lg-3">
+                            <div class="info-wrap">
+                                <div class="row">
+                                    <div class="col-lg-4 info">
+                                        <i class="icofont-google-map"></i>
+                                        <h4>Name</h4>
+                                        <p>{{ user.username }}</p>
+                                    </div>
+
+                                    <div class="col-lg-4 info mt-4 mt-lg-0">
+                                        <a href="{% url 'logout' %}">LOGOUT</a>
+                                    </div v>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="tm-margin-t-small">
+                    <h3 class="tm-green-text tm-title tm-margin-t-small">
+                        Useful Links
+                    </h3>
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="#" class="tm-text-link">Suspendisse sed dui nulla</a></li>
+                            <li><a href="#" class="tm-text-link">Lorem ipsum dolor sit</a></li>
+                            <li><a href="#" class="tm-text-link">Duiss nec purus et eros</a></li>
+                            <li><a href="#" class="tm-text-link">Etiam pulvinar et ligula sed</a></li>
+                            <li><a href="#" class="tm-text-link">Proin egestas eu felis et iaculis</a></li>
+                        </ul>
+                    </nav v>
+                    <hr class="tm-margin-t-small">
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+</section>
+<!-- ======= End Blog ======= -->
+{% endblock %}

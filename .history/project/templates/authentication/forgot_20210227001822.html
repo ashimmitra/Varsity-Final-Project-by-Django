@@ -1,0 +1,42 @@
+{% extends 'layouts.html' %} {% block title %} Forgot Password Page {% endblock title %} {% block content %}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="text-center">আমি আমার পাসওয়ার্ড ভুলে গেছি 😞</h2>
+        </div>
+
+    </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- ======= Contact Section ======= -->
+
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+            <div class="col-lg-4">
+                <h4 class="text-center">পাসওয়ার্ড ভুলে গেছ?</h4>
+                <hr>
+                <form action="" method="post" role="form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required/>
+                        <div class="validate"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-success btn-block" type="submit ">লগ-ইন</button>
+                    </div>
+                </form><br>
+                <small> তোমার অ্যাকাউন্টে লগ-ইন কর <a href="{% url 'login' %}">এইখানে ক্লিক কর!</a></small>
+            </div>
+
+        </div>
+</section>
+<!-- End Contact Section -->
+
+{% endblock %}
