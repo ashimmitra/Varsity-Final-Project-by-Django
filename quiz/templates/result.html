@@ -1,0 +1,62 @@
+{% extends "layouts.html" %} {% block title %} Result Page{% endblock %} {% block content %} {% load static %}
+<div class="tm-blog-img-container">
+</div>
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+
+    <style>
+        body {
+            background: #FFFFFF;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+        }
+        
+        #container {
+            width: 60%;
+            background: #fff;
+            margin: 20px auto;
+            overflow: auto;
+            padding: 25px;
+            border: 1px solid black;
+        }
+        
+        #results h3 {
+            background: #82f0b0;
+            color: #22C4C6;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        header {
+            text-align: center;
+        }
+        
+        footer {
+            background: black;
+        }
+        
+        .tm-margin-t-small {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Your Score: <span id="results"></span></h2>
+    <script>
+    </script>
+</body>
+
+</html>
+{%endblock%}

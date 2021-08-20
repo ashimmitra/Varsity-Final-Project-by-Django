@@ -1,0 +1,72 @@
+{% extends "layouts.html" %} {% block title %} Exam and Profile{% endblock %} {% block content %} {% load static %}
+<div class="tm-blog-img-container">
+</div>
+<!-- ======= Blog ======= -->
+<section class="tm-section">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12">
+                <div class="tm-blog-post text-center">
+                    <h3 class="tm-green-text">পরীক্ষা সমূহ</h3>
+                    <hr class="tm-margin-t-small">
+                    <p>বিভিন্ন বিষয়াবলীর উপর পরীক্ষাসমূহ</p>
+                </div>
+                <hr>
+                <div class="quiz_name">
+                    <a href="{% url 'profile.mental_ability' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg ">Mental Ability</button></a><br>
+                    <a href="{% url 'profile.english' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg ">Engish</button></a><br>
+                    <a href="{% url 'profile.ban' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg ">Bangla</button></a><br>
+                    <a href="{% url 'profile.math' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg ">Math</button></a><br>
+                    <a href="{% url 'profile.science' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg ">Science</button></a><br>
+                    <a href="{% url 'profile.generalknowledge' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg">General Knowledge</button></a>
+                    <a href="{% url 'profile.icts' %}" target="_blank"><button type="button " class="btn btn-outline-success btn-lg">ICT</button></a>
+                </div>
+            </div>
+            <aside class="col-md-6 col-sm-12 tm-aside-r ">
+                <div class="tm-aside-container text-center ">
+                    <h3 class="tm-green-text text-center ">
+                        প্রোফাইল
+                    </h3>
+                    <hr class="tm-margin-t-small ">
+                    <div class="row justify-content-center " data-aos="fade-up ">
+                        <div class="col-md-12 card ">
+                            <div class="info-wrap ">
+                                <div class="row ">
+                                    <div class="col-md-12 info ">
+                                        <i class="icofont-student-alt "></i>
+                                        <h4>Name</h4>
+                                        <p>{{ user.username }}</p>
+                                    </div>
+
+                                    <div class="col-md-12 info mt-4 mt-lg-0 ">
+                                        <a href="{% url 'logout' %} ">LOGOUT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 card mt-4 ">
+                            <h3 class="tm-green-text text-center ">
+                                Useful Links
+                            </h3>
+                            <hr class="tm-margin-t-small ">
+                            <nav>
+                                <ul class="nav ">
+                                    <li>
+                                        <a href="# " class="tm-text-link ">পরীক্ষায় ভালো মার্ক পেতে হলে অনেক পড়তে হবে</a><br>
+                                        <a href="# " class="tm-text-link ">সবথেকে ভালো যে তার অবস্থান সবসময়ই উপরে</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+            </aside>
+
+            </div>
+        </div>
+
+</section>
+<!-- ======= End Blog ======= -->
+{% endblock %}

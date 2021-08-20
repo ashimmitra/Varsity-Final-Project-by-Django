@@ -1,0 +1,57 @@
+{% extends 'layouts.html' %} {% block title %} Login Page {% endblock title %} {% block content %}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="text-center">তোমার একাউন্টে লগ-ইন কর</h2>
+        </div>
+
+    </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- ======= Contact Section ======= -->
+
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+            <div class="col-lg-4">
+                <h4 class="text-center mb-3">তোমার একাউন্টে লগ-ইন কর</h4>
+                <hr> {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button> {{ message }}
+                </div>
+                {% endfor %}
+
+                <form action="" method="post" role="form">
+
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="User Name" data-rule="email" data-msg="Please enter a valid email" required/>
+                        <div class="validate"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required/>
+                        <div class="validate"></div>
+                    </div>
+
+                    <small>আমার <a href="{% url 'forgotpassword' %}">পাসওয়ার্ড!</a> ভুলে গেছি 😞</small>
+                    <div class="text-center"><br>
+                        <button class="btn btn-success btn-block" type="submit">লগ-ইন</button>
+                    </div>
+                </form><br>
+                <small>তোমার কি কোন একাউন্ট নাই? <a href="{% url 'registration' %}">রেজিস্ট্রেশন কর!</a></small>
+            </div>
+
+        </div>
+</section>
+<!-- End Contact Section -->
+
+{% endblock %}

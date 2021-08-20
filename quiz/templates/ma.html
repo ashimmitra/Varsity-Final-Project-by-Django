@@ -1,0 +1,83 @@
+{% extends "layouts.html" %} {% block title %}Mental Ability Exam{% endblock %} {% block content %} {% load static %}
+<div class="tm-blog-img-container">
+</div>
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+    <style>
+        body {
+            background: #FFFFFF;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+        }
+        
+        #container {
+            width: 60%;
+            background: #fff;
+            margin: 20px auto;
+            overflow: auto;
+            padding: 25px;
+            border: 1px solid black;
+        }
+        
+        #results h3 {
+            background: #82f0b0;
+            color: #22C4C6;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        header {
+            text-align: center;
+        }
+        
+        footer {
+            background: black;
+        }
+        
+        .tm-margin-t-small {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <a href="/"><button type="button " class="btn btn-outline-success btn-sm">Go Back</button></a>
+        <header>
+            <h2>Mental Ability Questions</h2>
+            <hr class="tm-margin-t-small">
+        </header>
+
+        <section>
+            <div id="results"></div>
+            <form name="quizForm" onsubmit="return submitAnswers(answers = [{% for q in questions %}'{{ q.answer }}',{% endfor %}])">
+                {% for q in questions %}
+                <h3> {{ q.id }}. {{ q.question }}</h3>
+                <input type="radio" name="q{{ q.id }}" value="a" id="q1a"> a. {{ q.option1 }}<br><br>
+                <input type="radio" name="q{{ q.id }}" value="b" id="q1b"> b. {{ q.option2 }}<br><br>
+                <input type="radio" name="q{{ q.id }}" value="c" id="q1c"> c. {{ q.option3 }}<br><br>
+                <input type="radio" name="q{{ q.id }}" value="d" id="q1d"> d. {{ q.option4 }}<br><br> {% endfor %}
+                <br>
+                <a href="/quiz/result/"><button type="button " class="btn btn-outline-success btn-lg">Submit Answer</button></a>
+            </form>
+            <br>
+            <a href="/quiz/mental-ability/" class="text-center"><button type="button" class="btn btn-outline-success btn-sm">Reset</button></a>
+        </section>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}
